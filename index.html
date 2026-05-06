@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meine Seite</title>
+    <style>
+        html {
+            min-height: 100%;
+            background: linear-gradient(to bottom, black, #FF6B00);
+        }
+        body {
+            min-height: 100vh;
+            background: none;
+            color: rgb(255, 255, 255);
+            }
+        .wave-heading {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        .wave-heading span {
+            display: inline-block;
+            animation: wave 1.4s ease-in-out infinite;
+        }
+        @keyframes wave {
+            0%, 100% { transform: translateY(0); }
+            50%       { transform: translateY(-12px); }
+        }
+    </style>
+</head>
+<body>
+    <div style="margin: 3%;">
+        <h1 class="wave-heading" id="waveText"></h1>
+        <p></p>
+    </div>
+
+    <script>
+        const text = "Wilkommen auf meiner Seite!";
+        const container = document.getElementById("waveText");
+
+        [...text].forEach((char, i) => {
+            const span = document.createElement("span");
+            span.textContent = char === " " ? "\u00A0" : char;
+            span.style.animationDelay = `${i * 0.06}s`;
+            container.appendChild(span);
+        });
+    </script>
+</body>
+</html>
