@@ -31,8 +31,8 @@
 </head>
 <body>
     <div style="margin: 3%;">
-        <h1 class="wave-heading" id="waveText">Deltarune countdown.</h1>
-        <div id="countdown">
+        <h1 class="wave-heading" id="waveText"></h1>
+        <div style="text-align: center; font-size: xx-large; font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;" id="countdown">
             <span id="days"></span>d :
             <span id="hours"></span>h :
             <span id="minutes"></span>m :
@@ -69,7 +69,7 @@
         // Update every 10ms for smooth milliseconds
         setInterval(updateCountdown, 10);
 
-        const text = "Wilkommen auf meiner Seite!";
+        const text = "Deltarune Countdown!";
         const container = document.getElementById("waveText");
 
         [...text].forEach((char, i) => {
