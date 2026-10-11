@@ -1,0 +1,24 @@
+﻿<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meine Seite</title>
+    <style>
+        html {
+            min-height: 100%;
+            background: linear-gradient(to bottom, black, #FF6B00);
+        }
+        body {
+            min-height: 100vh;
+            background: none;
+            color: rgb(255, 255, 255);
+            }
+    </style>
+</head>
+<body>
+    <div style="margin: 3%;">
+        <h1 style="text-align: center;">Hello, welcome to my website!</h1>
+    </div>
+</body>
+</html>

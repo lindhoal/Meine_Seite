@@ -5,79 +5,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Meine Seite</title>
     <style>
-        html {
-            min-height: 100%;
-            background: linear-gradient(to bottom, black, #FF6B00);
+        html, body {
+            margin: 0;
+            padding: 0;
         }
         body {
             min-height: 100vh;
-            background: none;
+            background: linear-gradient(to bottom, black, #FF6B00);
+            background-attachment: fixed;
+            background-repeat: no-repeat;
             color: rgb(255, 255, 255);
-            }
-        .wave-heading {
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-        }
-        .wave-heading span {
-            display: inline-block;
-            animation: wave 1.4s ease-in-out infinite;
-        }
-        @keyframes wave {
-            0%, 100% { transform: translateY(0); }
-            50%       { transform: translateY(-12px); }
         }
     </style>
 </head>
 <body>
     <div style="margin: 3%;">
-        <h1 class="wave-heading" id="waveText"></h1>
-        <div style="text-align: center; font-size: xx-large; font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;" id="countdown">
-            <span id="days"></span>d :
-            <span id="hours"></span>h :
-            <span id="minutes"></span>m :
-            <span id="seconds"></span>s :
-            <span id="ms"></span>ms
-        </div>
+        <h1 style="text-align: center;">Hello, welcome to my website!</h1>
     </div>
-
-    <script>
-        const targetDate = new Date("2026-06-24T00:00:00").getTime();
-
-        function updateCountdown() {
-        const now = new Date().getTime();
-        const diff = targetDate - now;
-
-        if (diff <= 0) {
-            document.getElementById("countdown").innerHTML = "Time's up!";
-            return;
-        }
-
-        const days = Math.floor(diff / (1000 * 60 * 60 * 24));
-        const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
-        const minutes = Math.floor((diff / (1000 * 60)) % 60);
-        const seconds = Math.floor((diff / 1000) % 60);
-        const milliseconds = Math.floor(diff % 1000);
-
-        document.getElementById("days").textContent = days;
-        document.getElementById("hours").textContent = hours.toString().padStart(2, "0");
-        document.getElementById("minutes").textContent = minutes.toString().padStart(2, "0");
-        document.getElementById("seconds").textContent = seconds.toString().padStart(2, "0");
-        document.getElementById("ms").textContent = milliseconds.toString().padStart(3, "0");
-        }
-
-        // Update every 10ms for smooth milliseconds
-        setInterval(updateCountdown, 10);
-
-        const text = "Deltarune Countdown!";
-        const container = document.getElementById("waveText");
-
-        [...text].forEach((char, i) => {
-            const span = document.createElement("span");
-            span.textContent = char === " " ? "\u00A0" : char;
-            span.style.animationDelay = `${i * 0.06}s`;
-            container.appendChild(span);
-        });
-    </script>
 </body>
 </html>
